@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="digital-clock">
+        <div class="time">
+            <div class="left-side">
+                <span id="hours">00</span>
+            </div>
+            <div class="right-side">
+                <div class="right-top">
+                    <span id="separator">:</span>
+                    <span id="minutes">00</span>
+                   
+                </div>
+                <div class="right-down">
+                    <span id="period">PM</span>
+                    <span id="seconds">00</span>
+                    
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let hoursIE = document.getElementById("hours");
+        let minutesIE = document.getElementById("minutes");
+        let secondsIE = document.getElementById("seconds");
+        let periodsIE = document.getElementById("period");
+    
+        function clock() {
+            const now = new Date();
+            let h = now.getHours();
+            let m = now.getMinutes();
+            let s = now.getSeconds();
+    
+            let p = "AM";
+            if (h >= 12) {
+                p = "PM";
+                if (h > 12) {
+                    h = h - 12;
+                }
+            }
+            if (h === 0) {
+                h = 12; // midnight
+            }
+    
+            // Add leading zeros
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
+    
+            // Display values
+            hoursIE.innerHTML = h;
+            minutesIE.innerHTML = m;
+            secondsIE.innerHTML = s;
+            periodsIE.innerHTML = p;
+        }
+    
+        clock();
+        setInterval(clock, 1000);
+    </script>
+    
+</body>
+</html>

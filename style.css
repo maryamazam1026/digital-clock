@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;;
+}
+body{
+    background: #ea50af;
+    height: 100vh;
+}
+body,.digital-clock,.time{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.digital-clock{
+    background: #000;
+    color: white;
+    border-radius: 10px;
+}
+.time{
+    font-family: 'Times New Roman', Times, serif;
+   padding:10px;
+}
+#hours{
+    font-size:10em;
+    color:blue;
+}
+#minutes{
+    font-size:8em;
+    color:#89ded8
+}
+#seconds{
+    font-size:3em;
+}
+#separator{
+    font-size:8em;
+    color:grey;
+}
+#period{
+    font-size: 3em;
+    color:orange;
+}
